@@ -1,0 +1,42 @@
+/* src/app/pages/home/home.component.scss */
+
+// ------------------------------------
+// Estilos para Animação dos Cards e Layout
+// ------------------------------------
+
+// Animação suave para todos os cards
+.card {
+    // Adiciona transição para 'transform' e 'box-shadow' para suavidade
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 2px solid; 
+}
+
+// Efeito hover sutil para os cards de estatística do topo
+.card:hover {
+    // Leve levantamento
+    transform: translateY(-3px);
+    // Sombra mais proeminente
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+// Efeito hover para os cards da lista de jogos (Histórico)
+// Usamos o atributo ng-reflect-ng-class para selecionar os cards com borda dinâmica
+.card[ng-reflect-ng-class*="border-"]:hover {
+    // Apenas um leve aumento para feedback
+    transform: scale(1.005);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+// ------------------------------------
+// Layout do Gráfico
+// ------------------------------------
+
+.chart-container {
+    height: 400px; /* Altura fixa para o gráfico de linhas */
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
