@@ -6,7 +6,8 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "public",
+  
+    "public": "dist/tenis-app/browser", 
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -15,7 +16,8 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "browser/index.html"
+        
+        "destination": "/index.html"
       }
     ]
   }
