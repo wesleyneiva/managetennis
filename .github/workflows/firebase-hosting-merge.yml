@@ -11,10 +11,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci && npm run build
+
+      # 1. Configurar Node.js (necessário para o build Angular)
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 2. Instalar dependências e Build (com flag de produção)
+      - name: Install dependencies and build
+        run: |
+          npm ci
+          npm run build -- --configuration=production
+          
+      # 3. Deploy
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MYGAME_9E93D }}
           channelId: live
           projectId: mygame-9e93d
+          # CORREÇÃO: Define o diretório público para onde o Angular compila
+          public-dir: dist/mygame-9e93d/browser 
