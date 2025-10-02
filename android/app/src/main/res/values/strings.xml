@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Meu App Firebase</string>
-    <string name="title_activity_main">Meu App Firebase</string>
+    <string name="app_name">Manage Tennis</string>
+    <string name="title_activity_main">Manage Tennis</string>
     <string name="package_name">com.exemplo.meuapp</string>
     <string name="custom_url_scheme">com.exemplo.meuapp</string>
 </resources>
